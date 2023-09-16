@@ -15,36 +15,36 @@
 // };
 
 const isPalindrome = (str) => {
-const formattedStr = removeNonAlphanumeric(str.toLowerCase())
-const reversedStr = reverseStr(formattedStr)
-  return formattedStr === reversedStr ;
-}
+	const formattedStr = removeNonAlphanumeric(str.toLowerCase());
+	const reversedStr = reverseStr(formattedStr);
+	return formattedStr === reversedStr;
+};
 const removeNonAlphanumeric = (str) => {
-  let formattedStr = "";
-  
+	let formattedStr = "";
+
 	for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    
+		const char = str[i];
+
 		if (isAlphanumeric(char)) {
-      formattedStr += char;
+			formattedStr += char;
 		}
 	}
-  
-	return formattedStr
+
+	return formattedStr;
 	// console.log(formattedStr);
 };
 
 const isAlphanumeric = (char) => {
-  const code = char.toLowerCase().charCodeAt(0);
-  return (code >= 97 && code <= 122) || (code >= 48 && code <= 57);
+	const code = char.toLowerCase().charCodeAt(0);
+	return (code >= 97 && code <= 122) || (code >= 48 && code <= 57);
 };
 
 const reverseStr = (str) => {
- let reversed = ''
+	let reversed = "";
 
-  for(let i=str.length - 1; i>=0;i--) {
-    reversed += str[i]
-  }
-  return reversed
+	for (let i = str.length - 1; i >= 0; i--) {
+		reversed += str[i];
+	}
+	return reversed;
 };
 module.exports = isPalindrome;
